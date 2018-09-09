@@ -9,7 +9,7 @@ There are too many bombs for us to deal with, so we are giving each student a bo
 ## Step 1: Get Your Bomb
 You can obtain your bomb by pointing your Web browser at:
     
-    [http://bomblab.bryancdixon.com:15213](http://bomblab.bryancdixon.com:15213)
+[http://bomblab.bryancdixon.com:15213](http://bomblab.bryancdixon.com:15213)
     
 This will display a binary bomb request form for you to fill in. Enter your *Campus ID* and *Campus Email* and hit the Submit button. Failing to use your campus username/email may result in your bomb not getting graded. The server will build your bomb and return it to your browser in a tar file called *bombk.tar*, where *k* is the unique number of your bomb.
 
@@ -53,7 +53,7 @@ This is an individual project. All handins are electronic. Clarifications and co
 ## Handin
 You should upload your bomb and solution text file to Turnin as a tar.gz file. The bomb will also notify me automatically about your progress as you work on it. You can keep track of how you are doing by looking at the class scoreboard at:
 
-    [http://bomblab.bryancdixon.com:15213/scoreboard](http://bomblab.bryancdixon.com:15213/scoreboard)
+[http://bomblab.bryancdixon.com:15213/scoreboard](http://bomblab.bryancdixon.com:15213/scoreboard)
     
 This web page is updated continuously every 30 seconds to show the progress for each bomb. Let me know if it is down or doesn’t appear to be updating.
 
@@ -62,26 +62,34 @@ This web page is updated continuously every 30 seconds to show the progress for 
 There are many ways of defusing your bomb. You can examine it in great detail without ever running the program, and figure out exactly what it does. This is a useful technique, but it not always easy to do. You can also run it under a debugger, watch what it does step by step, and use this information to defuse it. This is probably the fastest way of defusing it.
 
 We do make one request, please do not use brute force! You could write a program that will try every possible key to find the right one. But this is no good for several reasons:
-  * Youlose1/2point(uptoamaxof20points)everytimeyouguessincorrectlyandthebombexplodes.
+ 
+ * You lose 1/2 point (up to a max of 20 points) every time you guess incorrectly and the bomb explodes.
   * Every time you guess wrong, a message is sent to the bomblab server. You could very quickly saturate the network with these messages, and cause the system administrators to revoke your computer access.
   * We haven’t told you how long the strings are, nor have we told you what characters are in them. Even if you made the (incorrect) assumptions that they all are less than 80 characters long and only contain letters, then you will have 2680 guesses for each phase. This will take a very long time to run, and you will not get the answer before the assignment is due.
+
+
 There are many tools which are designed to help you figure out both how programs work, and what is wrong when they don’t work. Here is a list of some of the tools you may find useful in analyzing your bomb, and hints on how to use them.
-  * gdb
-The GNU debugger, this is a command line debugger tool available on virtually every platform. You can trace through a program line by line, examine memory and registers, look at both the source code and assembly code (we are not giving you the source code for most of your bomb), set breakpoints, set memory watch points, and write scripts.
-The CS:APP web site
-    http://csapp.cs.cmu.edu/public/students.html
-has a very handy single-page gdb summary that you can print out and use as a reference. Here are some other tips for using gdb.
-– To keep the bomb from blowing up every time you type in a wrong input, you’ll want to learn how to set breakpoints.
-– For online documentation, type “help” at the gdb command prompt, or type “man gdb”, or “info gdb” at a Unix prompt. Some people also like to run gdb under gdb-mode in emacs.
+  * *gdb*
+    * The GNU debugger, this is a command line debugger tool available on virtually every platform. You can trace through a program line by line, examine memory and registers, look at both the source code and assembly code (we are not giving you the source code for most of your bomb), set breakpoints, set memory watch points, and write scripts.
+    * The CS:APP web site
+    [http://csapp.cs.cmu.edu/public/students.html](http://csapp.cs.cmu.edu/public/students.html)
+    has a very handy single-page *gdb* summary that you can print out and use as a reference. 
+    * Here are some other tips for using *gdb*.
+        * To keep the bomb from blowing up every time you type in a wrong input, you’ll want to learn how to set breakpoints.
+        * For online documentation, type “help” at the gdb command prompt, or type “man gdb”, or “info gdb” at a Unix prompt. Some people also like to run gdb under gdb-mode in emacs.
   * objdump -t
-This will print out the bomb’s symbol table. The symbol table includes the names of all functions and global variables in the bomb, the names of all the functions the bomb calls, and their addresses. You may learn something by looking at the function names!
+    * This will print out the bomb’s symbol table. The symbol table includes the names of all functions and global variables in the bomb, the names of all the functions the bomb calls, and their addresses. You may learn something by looking at the function names!
   * objdump -d
-Use this to disassemble all of the code in the bomb. You can also just look at individual functions.
+    * Use this to disassemble all of the code in the bomb. You can also just look at individual functions.
 Reading the assembler code can tell you how the bomb works.
-Although objdump -d gives you a lot of information, it doesn’t tell you the whole story. Calls to system-level functions are displayed in a cryptic form. For example, a call to sscanf might appear as:
-8048c36: e8 99 fc ff ff call 80488d4 <_init+0x1a0>
-To determine that the call was to sscanf, you would need to disassemble within gdb.
+    * Although objdump -d gives you a lot of information, it doesn’t tell you the whole story. Calls to system-level functions are displayed in a cryptic form. For example, a call to sscanf might appear as:
+        ```
+        8048c36: e8 99 fc ff ff call 80488d4 <_init+0x1a0>
+        //To determine that the call was to sscanf, you would need to disassemble within gdb.
+        ```
+    
   * strings
-This utility will display the printable strings in your bomb.
-Looking for a particular tool? How about documentation? Don’t forget, the commands apropos, man, and info are your friends. In particular, man ascii might come in useful. info gas will give you more than you ever wanted to know about the GNU Assembler. Also, the web may also be a treasure trove of information. If you get stumped, feel free to ask your instructor for help.
+    * This utility will display the printable strings in your bomb.
+    
+Looking for a particular tool? How about documentation? Don’t forget, the commands *apropos*, *man*, and *info* are your friends. In particular, *man ascii* might come in useful. *info gas* will give you more than you ever wanted to know about the GNU Assembler. Also, the web may also be a treasure trove of information. If you get stumped, feel free to ask your instructor for help.
 
