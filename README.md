@@ -89,6 +89,13 @@ Reading the assembler code can tell you how the bomb works.
     
   * strings
     * This utility will display the printable strings in your bomb.
+  
+  * hostname
+    * The bomb requires that you use it on a restricted list of hostnames and I can't give it a wildcard. The lab will work on *jaguar* and *tiglon*, additionally it should work if you give your linux machine or VM the hostname of ubuntu. But this is what the issue is if you get the following error:
+        ``` bash session
+        $ ./bomb 
+        Initialization error: Running on an illegal host [2]
+        ```
     
 Looking for a particular tool? How about documentation? Don’t forget, the commands *apropos*, *man*, and *info* are your friends. In particular, *man ascii* might come in useful. *info gas* will give you more than you ever wanted to know about the GNU Assembler. Also, the web may also be a treasure trove of information. If you get stumped, feel free to ask your instructor for help.
 
