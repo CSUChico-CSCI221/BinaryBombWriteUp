@@ -38,7 +38,7 @@ Although phases get progressively harder to defuse, the expertise you gain as yo
 
 The bomb ignores blank input lines. If you run your bomb with a command line argument, for example,
 
-```bash
+```bash session
 linux> ./bomb psol.txt
 ```
 
