@@ -17,7 +17,6 @@ Save the *bombk.tar* file to a (protected) directory in which you plan to do you
   * README: Identifies the bomb and its owners.
   * bomb: The executable binary bomb.
   * bomb.c: Source file with the bomb’s main routine and a friendly greeting from Dr. Evil.
-  * bomblab.{pdf,ps}: The lab writeup.
   
 If for some reason you request multiple bombs, this is not a problem. Choose one bomb to work on and
 delete the rest.
