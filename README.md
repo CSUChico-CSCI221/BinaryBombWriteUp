@@ -50,7 +50,7 @@ To avoid accidentally detonating the bomb, you will need to learn how to single-
 This is an individual project. All handins are electronic. Clarifications and corrections will be posted on the course message board.
 
 ## Handin
-You should upload your bomb and solution text file to Turnin as a tar.gz file. The bomb will also notify me automatically about your progress as you work on it. You can keep track of how you are doing by looking at the class scoreboard at:
+You should upload your solution text file to Turnin as *solution.txt*. The bomb will also notify me automatically about your progress as you work on it. You can keep track of how you are doing by looking at the class scoreboard at:
 
 [http://bomblab.bryancdixon.com:15213/scoreboard](http://bomblab.bryancdixon.com:15213/scoreboard)
     
